@@ -371,7 +371,7 @@
 
         <!-- Splash screen background image -->
         <img 
-            src="assets/images/VIBE_WEAVERS-Splash-Screen-NEW-Double.png" 
+            src="assets/images/vibe-weavers-splash-screen.png" 
             alt="Splash Screen" 
             style="
                 position: absolute; 
@@ -511,7 +511,7 @@
         <!-- SCREEN 1: Choose between Host and Guest -->
         <div id="lobby-screen" class="lobby-container" style="display: none;">
             <!-- Background image for the lobby -->
-            <img src="assets/images/VIBE_WEAVERS Lobby Screen NEW Double.png" alt="Lobby Background" class="lobby-background">
+            <img src="assets/images/vibe-weavers-lobby-screen.png" alt="Lobby Background" class="lobby-background">
             
             <!-- Content box -->
             <div class="lobby-box">
@@ -527,7 +527,7 @@
         <!-- SCREEN 2: The Host's Screen -->
         <div id="host-screen" class="lobby-container" style="display: none;">
             <!-- Background image for the host screen -->
-            <img src="assets/images/VIBE_WEAVERS Lobby Screen NEW Double.png" alt="Host Background" class="lobby-background">
+            <img src="assets/images/vibe-weavers-lobby-screen.png" alt="Host Background" class="lobby-background">
             
             <!-- Content box -->
             <div class="lobby-box">
@@ -550,7 +550,7 @@
         <!-- SCREEN 3: The Guest's Screen -->
         <div id="guest-screen" class="lobby-container" style="display: none;">
             <!-- Background image for the guest screen -->
-            <img src="assets/images/VIBE_WEAVERS Lobby Screen NEW Double.png" alt="Guest Background" class="lobby-background">
+            <img src="assets/images/vibe-weavers-lobby-screen.png" alt="Guest Background" class="lobby-background">
             
             <!-- Content box -->
             <div class="lobby-box">
@@ -1120,10 +1120,10 @@
         // 2. GLOBAL CONFIGURATIONS (CONSTANTS) 
         // ===================================================================
         // --- Resource URLs ---
-        const PODRACER_GLB_URL = 'assets/models/Nave STAR MESH.glb'; // Visual Podracer model
-        const PODRACER_COLLIDER_GLB_URL = 'assets/models/Nave STAR COLISOR.glb'; // Podracer's physics collider shape.
-        const TERRAIN_GLB_URL = 'assets/models/Playground Compressed.glb'; // Main terrain/level model.
-        const AJAXSON_GLB_URL = "assets/models/Ajaxson Mesh Animado.glb"; // URL for the animated player character model.
+        const PODRACER_GLB_URL = 'assets/models/nave-star-mesh.glb'; // Visual Podracer model
+        const PODRACER_COLLIDER_GLB_URL = 'assets/models/nave-star-colisor.glb'; // Podracer's physics collider shape.
+        const TERRAIN_GLB_URL = 'assets/models/playground-compressed.glb'; // Main terrain/level model.
+        const AJAXSON_GLB_URL = "assets/models/ajaxson-mesh-animado.glb"; // URL for the animated player character model.
         
         // -------------------------------------------------------------------
         // --- General Scene & Rendering Settings ---
@@ -3037,7 +3037,7 @@
                 const rgbeLoader = new RGBELoader(loadingManager);
 
                 // Load the HDR environment map.
-                const hdrUrl = "assets/models/golden_gate_hills_1k.hdr";
+                const hdrUrl = "assets/models/golden-gate-hills-1k.hdr";
                 rgbeLoader.load(hdrUrl, (texture) => {
                     texture.mapping = THREE.EquirectangularReflectionMapping;
                     scene.environment = texture;
