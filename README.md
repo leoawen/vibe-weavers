@@ -10,6 +10,22 @@ You can play the latest version directly in your browser via the link below:
 
 **[https://leoawen.github.io/vibe-weavers/](https://leoawen.github.io/vibe-weavers/)**
 
+---
+
+## 📸 Galeria
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/leoawen/vibe-weavers/main/assets/images/vibe-weavers-splash-screen.png" width="700" alt="Tela de Início do VIBE_WEAVERS">
+  <br/>
+  <em>Tela de Início</em>
+  <br/><br/>
+  <img src="https://raw.githubusercontent.com/leoawen/vibe-weavers/main/assets/images/vibe-weavers-lobby-screen.png" width="700" alt="Tela de Lobby Multiplayer do VIBE_WEAVERS">
+  <br/>
+  <em>Tela de Lobby Multiplayer</em>
+</div>
+
+---
+
 ## 🚀 About the Project
 
 VIBE_WEAVERS is an exploration of modern web technologies like **Three.js** for 3D graphics, **Rapier.js** for physics, and **PeerJS** for P2P connectivity — all within a single HTML file for simplicity.  
