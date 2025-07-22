@@ -1,4 +1,5 @@
-# VIBE_WEAVERS [![Sponsor leoawen on GitHub Sponsors](https://img.shields.io/badge/Sponsor-💜-brightgreen?logo=github)](https://github.com/sponsors/leoawen)
+[![Sponsor leoawen on GitHub Sponsors](https://img.shields.io/badge/Sponsor-💜-brightgreen?logo=github)](https://github.com/sponsors/leoawen)
+# VIBE_WEAVERS 
 *A VibeCode Open Playground P2P Collaborative Game Project*
 
 Welcome to the official VIBE_WEAVERS repository!  
