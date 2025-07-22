@@ -49,3 +49,18 @@ It can also be used as a template and modified into an interactive 3D personal w
 
 - **LinkedIn**: [Leonardo Awen](https://www.linkedin.com/in/leonardoawen/)  
 - **Behance**: [Leonardo Awen](https://www.behance.net/leonardoawen)
+
+---
+## ❤️ Support VIBE_WEAVERS
+
+**VIBE_WEAVERS** is an independent, open-source project made with passion.  
+If you enjoy the game and believe in our mission to create an open playground for everyone, please consider supporting its development!
+
+Your contribution helps us dedicate more time to the project, build new features, and grow our community of Weavers.
+
+[![Sponsor leoawen on GitHub Sponsors](https://img.shields.io/badge/Sponsor-💜-brightgreen?logo=github)](https://github.com/sponsors/leoawen)
+
+### Sponsors
+
+*A huge thank you to everyone helping to weave this reality!*
+
