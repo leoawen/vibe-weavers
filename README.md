@@ -45,17 +45,12 @@ It can also be used as a template and modified into an interactive 3D personal w
 
 *(Podracer controls are detailed in-game)*
 
-
+---
 ## 🎮 Gameplay em Ação!
 
 Uma demonstração do sistema de multiplayer P2P em funcionamento.
 
 [![Gameplay Vibe Weavers Multiplayer](https://img.youtube.com/vi/moKQfCpOBMw/maxresdefault.jpg)](https://www.youtube.com/watch?v=moKQfCpOBMw)
-
-## 🔗 My Links
-
-- **LinkedIn**: [Leonardo Awen](https://www.linkedin.com/in/leonardoawen/)  
-- **Behance**: [Leonardo Awen](https://www.behance.net/leonardoawen)
 
 ---
 ## ❤️ Support VIBE_WEAVERS
@@ -67,7 +62,12 @@ Your contribution helps us dedicate more time to the project, build new features
 
 [![Sponsor leoawen on GitHub Sponsors](https://img.shields.io/badge/Sponsor-💜-brightgreen?logo=github)](https://github.com/sponsors/leoawen)
 
-### Sponsors
+## Sponsors
 
 *A huge thank you to everyone helping to weave this reality!*
+
+## 🔗 My Links
+
+- **LinkedIn**: [Leonardo Awen](https://www.linkedin.com/in/leonardoawen/)  
+- **Behance**: [Leonardo Awen](https://www.behance.net/leonardoawen)
 
