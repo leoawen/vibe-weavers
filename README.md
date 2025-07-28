@@ -45,6 +45,13 @@ It can also be used as a template and modified into an interactive 3D personal w
 
 *(Podracer controls are detailed in-game)*
 
+
+## 🎮 Gameplay em Ação!
+
+Uma demonstração do sistema de multiplayer P2P em funcionamento.
+
+[![Gameplay Vibe Weavers Multiplayer](https://img.youtube.com/vi/moKQfCpOBMw/maxresdefault.jpg)](https://www.youtube.com/watch?v=moKQfCpOBMw)
+
 ## 🔗 My Links
 
 - **LinkedIn**: [Leonardo Awen](https://www.linkedin.com/in/leonardoawen/)  
