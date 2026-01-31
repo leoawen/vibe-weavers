@@ -3471,7 +3471,24 @@
                 const mode = localPlayer ? localPlayer.state.controlMode : 'N/A';
                 console.log(`PointerLockControls: 'unlock' event fired. Current Mode: ${mode}, Paused: ${isPaused}`);
 
-                // If the game isn't paused, an unlock means the user wants to stop controlling, so reset movement state.
+                // --- NOVA LÓGICA DO ESC ---
+                // Se o jogo está rodando (isGameStarted), não está pausado (!isPaused)
+                // e o ponteiro foi desbloqueado (usuário apertou ESC), forçamos o menu de Pause.
+                // Verificamos também se não estamos em nenhum outro menu (como o PlaygroundMenu).
+                const isAnyOtherMenuOpen = (
+                    (playgroundMenu && playgroundMenu.style.display === 'flex') ||
+                    (raceSetupMenu && raceSetupMenu.style.display === 'flex') ||
+                    (soloRaceConfigMenu && soloRaceConfigMenu.style.display === 'flex')
+                );
+
+                if (isGameStarted && !isPaused && !isAnyOtherMenuOpen) {
+                    console.log("ESC detectado: Forçando Menu de Pause.");
+                    togglePause(true); // 'true' força o estado de pausa para ATIVADO
+                    return; // Interrompe o restante da função para evitar conflitos
+                }
+                // --------------------------
+
+                // Se o jogo NÃO está pausado (ex: desbloqueio programático ou erro), reseta os inputs
                 if (!isPaused && localPlayer && localPlayer.state.controlMode === ControlMode.FPS) {
                     localPlayer.state.moveForward = false;
                     localPlayer.state.moveBackward = false;
