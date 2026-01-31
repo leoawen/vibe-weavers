@@ -1643,6 +1643,7 @@
         // --- UI & Game State ---
         let isGameStarted = false;                  // A flag indicating if the game loop is active.
         let isPaused = false;                       // A flag indicating if the game is paused.
+        let ignoreNextPauseOnUnlock = false;        // NOVA: Impede o pause automático ao trocar de veículo (tecla H).
         let currentRenderStyle = 'NORMAL';          // The current texture filtering style ('NORMAL' or 'NEAREST').
         const AA_LEVELS = ['Off', 'FXAA', 'SMAA'];  // The available antialiasing options.
         let currentAALevel = 'SMAA';                // The currently selected antialiasing level.
@@ -3466,15 +3467,20 @@
             });
 
             // Event listener for when the mouse pointer is unlocked (e.g., by pressing Esc).
+            // Evento disparado quando o ponteiro do mouse é desbloqueado
             controls.addEventListener("unlock", () => {
+                // 1. Checagem de segurança para troca de veículo (Tecla H)
+                if (ignoreNextPauseOnUnlock) {
+                    console.log("🔒 Unlock ignorado (Troca de Veículo/Modo).");
+                    ignoreNextPauseOnUnlock = false; // Reseta para a próxima vez
+                    return; // Sai da função imediatamente, não pausa e não reseta inputs
+                }
+
                 const localPlayer = players.get(localPlayerId);
                 const mode = localPlayer ? localPlayer.state.controlMode : 'N/A';
                 console.log(`PointerLockControls: 'unlock' event fired. Current Mode: ${mode}, Paused: ${isPaused}`);
 
-                // --- NOVA LÓGICA DO ESC ---
-                // Se o jogo está rodando (isGameStarted), não está pausado (!isPaused)
-                // e o ponteiro foi desbloqueado (usuário apertou ESC), forçamos o menu de Pause.
-                // Verificamos também se não estamos em nenhum outro menu (como o PlaygroundMenu).
+                // 2. Lógica do ESC (Pausa Automática)
                 const isAnyOtherMenuOpen = (
                     (playgroundMenu && playgroundMenu.style.display === 'flex') ||
                     (raceSetupMenu && raceSetupMenu.style.display === 'flex') ||
@@ -3483,23 +3489,20 @@
 
                 if (isGameStarted && !isPaused && !isAnyOtherMenuOpen) {
                     console.log("ESC detectado: Forçando Menu de Pause.");
-                    togglePause(true); // 'true' força o estado de pausa para ATIVADO
-                    return; // Interrompe o restante da função para evitar conflitos
+                    togglePause(true); 
+                    return; 
                 }
-                // --------------------------
 
-                // Se o jogo NÃO está pausado (ex: desbloqueio programático ou erro), reseta os inputs
+                // 3. Reset de inputs (apenas se não pausou e não foi troca de veículo)
                 if (!isPaused && localPlayer && localPlayer.state.controlMode === ControlMode.FPS) {
                     localPlayer.state.moveForward = false;
                     localPlayer.state.moveBackward = false;
                     localPlayer.state.moveLeft = false;
                     localPlayer.state.moveRight = false;
                     localPlayer.state.isSprinting = false;
-                    console.log("   -> FPS movement reset due to unlock (not paused).");
                 }
                 if (!isPaused && localPlayer && localPlayer.state.controlMode === ControlMode.PODRACER) {
                     mouseScreenOffsetX = 0.0;
-                    console.log("   -> mouseScreenOffsetX reset for Podracer due to unlock (not paused).");
                 }
 
                 updateCursorAndIndicators();
@@ -4176,9 +4179,13 @@
             if (!localPlayer) return;
 
             // Use a switch statement to handle different key presses.
-            switch (code) {
-                
-                // --- ⚙️ System & Mode Commands (Toggles) ---
+            switch (code) {                
+                case 'KeyH': // Switch between FPS and Podracer modes.
+                    // Avisamos ao sistema que vamos destravar o mouse programaticamente.
+                    // Isso impede que o listener "unlock" acione o Pause menu.
+                    ignoreNextPauseOnUnlock = true;                 
+                    switchControlMode(localPlayer.state.controlMode === ControlMode.PODRACER ? ControlMode.FPS : ControlMode.PODRACER);
+                    break;) ---
                 case 'KeyH': // Switch between FPS and Podracer modes.
                     switchControlMode(localPlayer.state.controlMode === ControlMode.PODRACER ? ControlMode.FPS : ControlMode.PODRACER);
                     break;
