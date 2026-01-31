@@ -4185,9 +4185,6 @@
                     // Isso impede que o listener "unlock" acione o Pause menu.
                     ignoreNextPauseOnUnlock = true;                 
                     switchControlMode(localPlayer.state.controlMode === ControlMode.PODRACER ? ControlMode.FPS : ControlMode.PODRACER);
-                    break;) ---
-                case 'KeyH': // Switch between FPS and Podracer modes.
-                    switchControlMode(localPlayer.state.controlMode === ControlMode.PODRACER ? ControlMode.FPS : ControlMode.PODRACER);
                     break;
                 case 'KeyT': // Toggle visibility of multiplayer nametags.
                     areNameTagsVisible = !areNameTagsVisible;
